@@ -1,7 +1,7 @@
 var wordsList = [
     { word: "smurf", first: "_", second: "_", third: "_", fourth: "_", fifth: "_" },
     { word: "dinosaur", first: "_", second: "_", third: "_", fourth: "_", fifth: "_", sixth: "_", seventh: "_", eighth: "_" },
-    { word: "popeye", length: 6 }
+    { word: "popeye", first: "_", second: "_", third: "_", fourth: "_", fifth: "_", sixth: "_" }
 ];
 var wordIndex = 0;
 var start = document.getElementById("prompt");
@@ -40,46 +40,75 @@ document.onkeyup = function (event) {
             wordIndex++;
             alert("Good Job");
             start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+            document.onkeyup = function (event) {
+                if (event.key === "d") {
+                    wordsList[wordIndex].first = "d";
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
+                if (event.key === "i") {
+                    wordsList[wordIndex].second = "i";
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
+                if (event.key === "n") {
+                    wordsList[wordIndex].third = "n";
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
+                if (event.key === "o") {
+                    wordsList[wordIndex].fourth = "o";
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
+                if (event.key === "s") {
+                    wordsList[wordIndex].fifth = "s";
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
+                if (event.key === "a") {
+                    wordsList[wordIndex].sixth = "a";
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
+                if (event.key === "u") {
+                    wordsList[wordIndex].seventh = "u";
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
+                if (event.key === "r") {
+                    wordsList[wordIndex].eighth = "r";
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
+                if (event.key !== "d" && event.key !== "i" && event.key !== "n" && event.key !== "o" && event.key !== "s" && event.key !== "a" && event.key !== "u" && event.key !== "r") {
+                    alert("Wrong!");
+                }
+                if (wordsList[wordIndex].first == "d" && wordsList[wordIndex].second == "i" && wordsList[wordIndex].third == "n" && wordsList[wordIndex].fourth == "o" && wordsList[wordIndex].fifth == "s" && wordsList[wordIndex].sixth == "a" && wordsList[wordIndex].seventh == "u" && wordsList[wordIndex].eighth == "r") {
+                    wordIndex++;
+                    alert("Yay, two words down..!!");
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                    document.onkeyup = function (event) {
+                        if (event.key === "p") {
+                            wordsList[wordIndex].first = "p";
+                            wordsList[wordIndex].third = "p";
+                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                        }
+                        if (event.key === "o") {
+                            wordsList[wordIndex].second = "o";
+                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                        }
+                        if (event.key === "e") {
+                            wordsList[wordIndex].fourth = "e";
+                            wordsList[wordIndex].sixth = "e";
+                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                        }
+                        if (event.key === "y") {
+                            wordsList[wordIndex].fifth = "y";
+                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                        }
+                        if (event.key !== "p" && event.key !== "o" && event.key !== "e" && event.key !== "y") {
+                            alert("Wrong!");
+
+                            if (wordsList[wordIndex].first == "p" && wordsList[wordIndex].second == "o" && wordsList[wordIndex].third == "p" && wordsList[wordIndex].fourth == "e" && wordsList[wordIndex].fifth == "y" && wordsList[wordIndex].sixth == "e") {
+                                alert("Wow!! you did it");
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
-}
-    // second word code
-    // if (event.key === "d") {
-    //     wordsList[wordIndex].first = "d";
-    //     console.log(wordsList[1]);
-    //     start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
-    // }
-    //     //     if (event.key === "i") {
-    //     //         wordsList[wordIndex].second = "i";
-    //     //         start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
-    //     //     }
-    //     //     if (event.key === "n") {
-    //     //         wordsList[wordIndex].third = "n";
-    //     //         start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
-    //     //     }
-    //     //     if (event.key === "o") {
-    //     //         wordsList[wordIndex].fourth = "o";
-    //     //         start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
-    //     //     }
-    //     //     if (event.key === "s") {
-    //     //         wordsList[wordIndex].fifth = "s";
-    //     //         start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
-    //     //     }
-    //     //     if (event.key === "a") {
-    //     //         wordsList[wordIndex].fifth = "a";
-    //     //         start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
-    //     //     }
-    //     //     if (event.key === "u") {
-    //     //         wordsList[wordIndex].fifth = "u";
-    //     //         start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
-    //     //     }
-    //     //     if (event.key === "r") {
-    //     //         wordsList[wordIndex].fifth = "r";
-    //     //         start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
-    //     //     }
-    //     //     if (event.key !== "d" && event.key !== "i" && event.key !== "n" && event.key !== "o" && event.key !== "s" && event.key !== "a" && event.key !== "u" && event.key !== "r") {
-    //     //         alert("Wrong!");
-    //     //     }
-    //     // }
-
 }
