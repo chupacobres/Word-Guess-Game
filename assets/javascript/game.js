@@ -5,6 +5,7 @@ var wordsList = [
 ];
 var wordIndex = 0;
 var start = document.getElementById("prompt");
+var host = document.getElementById("message");
 
 document.onkeyup = function (event) {
     start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth;
@@ -38,7 +39,8 @@ document.onkeyup = function (event) {
         }
         if (wordsList[wordIndex].first == "s" && wordsList[wordIndex].second == "m" && wordsList[wordIndex].third == "u" && wordsList[wordIndex].fourth == "r" && wordsList[wordIndex].fifth == "f") {
             wordIndex++;
-            alert("Good Job");
+            // alert("Good Job");
+            host.textContent = "Good Job!";
             start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
             document.onkeyup = function (event) {
                 if (event.key === "d") {
@@ -78,7 +80,8 @@ document.onkeyup = function (event) {
                 }
                 if (wordsList[wordIndex].first == "d" && wordsList[wordIndex].second == "i" && wordsList[wordIndex].third == "n" && wordsList[wordIndex].fourth == "o" && wordsList[wordIndex].fifth == "s" && wordsList[wordIndex].sixth == "a" && wordsList[wordIndex].seventh == "u" && wordsList[wordIndex].eighth == "r") {
                     wordIndex++;
-                    alert("Yay, two words down..!!");
+                    // alert("Yay, two words down..!!");
+                    host.textContent = "Yay, two words down..!!";
                     start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
                     document.onkeyup = function (event) {
                         if (event.key === "p") {
@@ -100,11 +103,12 @@ document.onkeyup = function (event) {
                             start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
                         }
                         if (event.key !== "p" && event.key !== "o" && event.key !== "e" && event.key !== "y") {
-                            alert("Wrong!");
-
-                            if (wordsList[wordIndex].first == "p" && wordsList[wordIndex].second == "o" && wordsList[wordIndex].third == "p" && wordsList[wordIndex].fourth == "e" && wordsList[wordIndex].fifth == "y" && wordsList[wordIndex].sixth == "e") {
-                                alert("Wow!! you did it");
-                            }
+                            // alert("Wrong!");
+                            host.textContent = "Wrong!!";
+                        }
+                        if (wordsList[wordIndex].first == "p" && wordsList[wordIndex].second == "o" && wordsList[wordIndex].third == "p" && wordsList[wordIndex].fourth == "e" && wordsList[wordIndex].fifth == "y" && wordsList[wordIndex].sixth == "e") {
+                            // alert("Wow!! you did it");
+                            host.textContent = "Congratulations, you win!!";
                         }
                     }
                 }
