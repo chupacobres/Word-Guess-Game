@@ -6,6 +6,9 @@ var wordsList = [
 var wordIndex = 0;
 var start = document.getElementById("prompt");
 var host = document.getElementById("message");
+var score = document.getElementById("liferemain");
+var guessesLeft = 10;
+score.textContent = guessesLeft;
 
 document.onkeyup = function (event) {
     start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth;
@@ -35,76 +38,85 @@ document.onkeyup = function (event) {
             wordStatus();
         }
         if (event.key !== "s" && event.key !== "m" && event.key !== "u" && event.key !== "r" && event.key !== "f") {
+            guessesLeft = guessesLeft - 1
+            score.textContent = guessesLeft;
             alert("Wrong!");
         }
         if (wordsList[wordIndex].first == "s" && wordsList[wordIndex].second == "m" && wordsList[wordIndex].third == "u" && wordsList[wordIndex].fourth == "r" && wordsList[wordIndex].fifth == "f") {
             wordIndex++;
-            // alert("Good Job");
             host.textContent = "Good Job!";
             start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
             document.onkeyup = function (event) {
+                function wordStatus() {
+                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                }
                 if (event.key === "d") {
                     wordsList[wordIndex].first = "d";
-                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                    wordStatus();
                 }
                 if (event.key === "i") {
                     wordsList[wordIndex].second = "i";
-                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                    wordStatus();
                 }
                 if (event.key === "n") {
                     wordsList[wordIndex].third = "n";
-                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                    wordStatus();
                 }
                 if (event.key === "o") {
                     wordsList[wordIndex].fourth = "o";
-                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                    wordStatus();
                 }
                 if (event.key === "s") {
                     wordsList[wordIndex].fifth = "s";
-                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                    wordStatus();
                 }
                 if (event.key === "a") {
                     wordsList[wordIndex].sixth = "a";
-                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                    wordStatus();
                 }
                 if (event.key === "u") {
                     wordsList[wordIndex].seventh = "u";
-                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                    wordStatus();
                 }
                 if (event.key === "r") {
                     wordsList[wordIndex].eighth = "r";
-                    start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth + " " + wordsList[wordIndex].seventh + " " + wordsList[wordIndex].eighth;
+                    wordStatus();
                 }
                 if (event.key !== "d" && event.key !== "i" && event.key !== "n" && event.key !== "o" && event.key !== "s" && event.key !== "a" && event.key !== "u" && event.key !== "r") {
+                    guessesLeft = guessesLeft - 1
+                    score.textContent = guessesLeft;
                     alert("Wrong!");
                 }
                 if (wordsList[wordIndex].first == "d" && wordsList[wordIndex].second == "i" && wordsList[wordIndex].third == "n" && wordsList[wordIndex].fourth == "o" && wordsList[wordIndex].fifth == "s" && wordsList[wordIndex].sixth == "a" && wordsList[wordIndex].seventh == "u" && wordsList[wordIndex].eighth == "r") {
                     wordIndex++;
-                    // alert("Yay, two words down..!!");
                     host.textContent = "Yay, two words down..!!";
                     start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
                     document.onkeyup = function (event) {
+                        function wordStatus() {
+                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                        }
                         if (event.key === "p") {
                             wordsList[wordIndex].first = "p";
                             wordsList[wordIndex].third = "p";
-                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                            wordStatus();
                         }
                         if (event.key === "o") {
                             wordsList[wordIndex].second = "o";
-                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                            wordStatus();
                         }
                         if (event.key === "e") {
                             wordsList[wordIndex].fourth = "e";
                             wordsList[wordIndex].sixth = "e";
-                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                            wordStatus();
                         }
                         if (event.key === "y") {
                             wordsList[wordIndex].fifth = "y";
-                            start.textContent = wordsList[wordIndex].first + " " + wordsList[wordIndex].second + " " + wordsList[wordIndex].third + " " + wordsList[wordIndex].fourth + " " + wordsList[wordIndex].fifth + " " + wordsList[wordIndex].sixth;
+                            wordStatus();
                         }
                         if (event.key !== "p" && event.key !== "o" && event.key !== "e" && event.key !== "y") {
-                            // alert("Wrong!");
-                            host.textContent = "Wrong!!";
+                            guessesLeft = guessesLeft - 1
+                            score.textContent = guessesLeft;
+                            alert("Wrong!");
                         }
                         if (wordsList[wordIndex].first == "p" && wordsList[wordIndex].second == "o" && wordsList[wordIndex].third == "p" && wordsList[wordIndex].fourth == "e" && wordsList[wordIndex].fifth == "y" && wordsList[wordIndex].sixth == "e") {
                             // alert("Wow!! you did it");
