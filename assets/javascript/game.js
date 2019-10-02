@@ -41,10 +41,18 @@ document.onkeyup = function (event) {
         if (event.key !== "s" && event.key !== "m" && event.key !== "u" && event.key !== "r" && event.key !== "f") {
             guessesLeft = guessesLeft - 1
             score.textContent = guessesLeft;
-            alert("Wrong!");
-            if (guessesLeft == 0) {
-                document.write("<h1>game over</h1>");
+            var nope = event.key;
+            lettersarray=[];
+            lettersarray.push(nope);
+            for (i=0;i<lettersarray.length;i++){
+            wrongLetters.textContent=lettersarray[i];
             }
+            alert("Wrong!");
+            
+            
+        }
+        if (guessesLeft == 0) {
+            document.write("<h1>game over</h1>");
         }
         if (wordsList[wordIndex].first == "s" && wordsList[wordIndex].second == "m" && wordsList[wordIndex].third == "u" && wordsList[wordIndex].fourth == "r" && wordsList[wordIndex].fifth == "f") {
             wordIndex++;
