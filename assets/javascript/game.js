@@ -7,6 +7,7 @@ var wordIndex = 0;
 var start = document.getElementById("prompt");
 var host = document.getElementById("message");
 var score = document.getElementById("liferemain");
+var wrongLetters = document.getElementById("lettersused");
 var guessesLeft = 10;
 score.textContent = guessesLeft;
 
@@ -41,6 +42,9 @@ document.onkeyup = function (event) {
             guessesLeft = guessesLeft - 1
             score.textContent = guessesLeft;
             alert("Wrong!");
+            if (guessesLeft == 0) {
+                document.write("<h1>game over</h1>");
+            }
         }
         if (wordsList[wordIndex].first == "s" && wordsList[wordIndex].second == "m" && wordsList[wordIndex].third == "u" && wordsList[wordIndex].fourth == "r" && wordsList[wordIndex].fifth == "f") {
             wordIndex++;
@@ -87,6 +91,10 @@ document.onkeyup = function (event) {
                     score.textContent = guessesLeft;
                     alert("Wrong!");
                 }
+                if (guessesLeft == 0) {
+                    document.write("<h1>game over</h1>");
+                }
+
                 if (wordsList[wordIndex].first == "d" && wordsList[wordIndex].second == "i" && wordsList[wordIndex].third == "n" && wordsList[wordIndex].fourth == "o" && wordsList[wordIndex].fifth == "s" && wordsList[wordIndex].sixth == "a" && wordsList[wordIndex].seventh == "u" && wordsList[wordIndex].eighth == "r") {
                     wordIndex++;
                     host.textContent = "Yay, two words down..!!";
@@ -117,6 +125,9 @@ document.onkeyup = function (event) {
                             guessesLeft = guessesLeft - 1
                             score.textContent = guessesLeft;
                             alert("Wrong!");
+                            if (guessesLeft == 0) {
+                                document.write("<h1>game over</h1>");
+                            }
                         }
                         if (wordsList[wordIndex].first == "p" && wordsList[wordIndex].second == "o" && wordsList[wordIndex].third == "p" && wordsList[wordIndex].fourth == "e" && wordsList[wordIndex].fifth == "y" && wordsList[wordIndex].sixth == "e") {
                             // alert("Wow!! you did it");
