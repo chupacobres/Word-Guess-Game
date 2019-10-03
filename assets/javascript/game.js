@@ -39,12 +39,15 @@ document.onkeyup = function (event) {
             wordsList[wordIndex].fifth = "f";
             wordStatus();
         }
+        var checkwrongletter = lettersarray.includes(event.key);
+        if (checkwrongletter == true) {
+            alert("you already guessed this letter!! Concentrate!!");
+        }
         if (event.key !== "s" && event.key !== "m" && event.key !== "u" && event.key !== "r" && event.key !== "f") {
             guessesLeft = guessesLeft - 1
             score.textContent = guessesLeft;
             var nope = event.key;
             lettersarray.push(nope);
-            alert("Wrong!");
             wrongLetters.textContent = lettersarray;
         }
         if (guessesLeft == 0) {
@@ -91,12 +94,15 @@ document.onkeyup = function (event) {
                     wordsList[wordIndex].eighth = "r";
                     wordStatus();
                 }
+                var checkwrongletter = lettersarray.includes(event.key);
+                if (checkwrongletter == true) {
+                    alert("you already guessed this letter!! Concentrate!!");
+                };
                 if (event.key !== "d" && event.key !== "i" && event.key !== "n" && event.key !== "o" && event.key !== "s" && event.key !== "a" && event.key !== "u" && event.key !== "r") {
                     guessesLeft = guessesLeft - 1
                     score.textContent = guessesLeft;
                     var nope = event.key;
                     lettersarray.push(nope);
-                    alert("Wrong!");
                     wrongLetters.textContent = lettersarray;
                 }
                 if (guessesLeft == 0) {
@@ -133,18 +139,21 @@ document.onkeyup = function (event) {
                         if (guessesLeft == 0) {
                             document.write("<h1>game over</h1>");
                         }
+                        var checkwrongletter = lettersarray.includes(event.key);
+                        if (checkwrongletter == true) {
+                            alert("you already guessed this letter!! Concentrate!!");
+                        };
                         if (event.key !== "p" && event.key !== "o" && event.key !== "e" && event.key !== "y") {
                             guessesLeft = guessesLeft - 1
                             score.textContent = guessesLeft;
                             var nope = event.key;
                             lettersarray.push(nope);
-                            alert("Wrong!");
                             wrongLetters.textContent = lettersarray;
 
                         }
                         if (wordsList[wordIndex].first == "p" && wordsList[wordIndex].second == "o" && wordsList[wordIndex].third == "p" && wordsList[wordIndex].fourth == "e" && wordsList[wordIndex].fifth == "y" && wordsList[wordIndex].sixth == "e") {
                             // alert("Wow!! you did it");
-                            host.textContent = "Congratulations, you win!!";
+                            document.write("<h1>Congatulations, you win</h1>");
                         }
                     }
                 }
