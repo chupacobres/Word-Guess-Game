@@ -153,7 +153,7 @@ document.onkeyup = function (event) {
                         }
                         if (wordsList[wordIndex].first == "p" && wordsList[wordIndex].second == "o" && wordsList[wordIndex].third == "p" && wordsList[wordIndex].fourth == "e" && wordsList[wordIndex].fifth == "y" && wordsList[wordIndex].sixth == "e") {
                             // alert("Wow!! you did it");
-                            document.write("<h1>Congatulations, you win</h1>");
+                            document.write("<h1>Congatulations, you win!!</h1>");
                         }
                     }
                 }
