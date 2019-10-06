@@ -4,9 +4,16 @@ body {
 .jumbotron{
     font-family: 'Pacifico', cursive;
 }
-body{
+/* body{
     background-image: url(/assets/images/hangman-150.png);
     background-repeat: no-repeat;
     background-position-x: 370px;
     background-position-y: 272px;
+} */
+img{
+    position: relative;
+    border: 3px solid #73AD21;
+    left: 430px;
+    top:-170px;
+
 }
