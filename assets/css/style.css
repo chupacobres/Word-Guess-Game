@@ -1,6 +1,4 @@
-body {
-    background-image: url("../images/background.jpg");
-}
+
 .jumbotron{
     font-family: 'Pacifico', cursive;
 }
@@ -12,7 +10,6 @@ body{
 }
 img{
     position: relative;
-    border: 3px solid #73AD21;
     left: 430px;
     top:-170px;
 }
