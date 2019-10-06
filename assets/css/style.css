@@ -1,3 +1,12 @@
 body {
     background-image: url("/assets/images/background.jpg");
 }
+.jumbotron{
+    font-family: 'Pacifico', cursive;
+}
+body{
+    background-image: url(/assets/images/hangman-150.png);
+    background-repeat: no-repeat;
+    background-position-x: 370px;
+    background-position-y: 270px;
+}
